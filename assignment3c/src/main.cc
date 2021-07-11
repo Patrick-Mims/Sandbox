@@ -8,15 +8,11 @@
 
 using namespace std;
 
-/* 
-    2D vector declared as globally, you could declare this in main
-    and pass a reference to parse, then pass another reference to 
-    search vector only to have to return it back to main for the out out
-    put. I decided to make it global for lack of time...
-*/
+/* 2D vector declared as globally */
 vector<vector<string>> v(20, vector<string>(20));
 
 /* help function */
+/* I'm only searching for one word in this assignment */
 void help(void)
 {
     cout << "PARAMETER HOW-TO: " << endl;
@@ -29,7 +25,7 @@ void help(void)
     cout << endl;
 }
 
-/* introduction function */
+/* Introduction function */
 void introduction(void)
 {
     cout << endl;
@@ -41,7 +37,7 @@ void introduction(void)
     help();
 }
 
-/* search the vector for the term */
+/* Search the vector for the term */
 void search_vector(string phrase)
 {
     vector<vector<string>>::const_iterator row;
@@ -84,10 +80,9 @@ void parse(void)
             {
                 /* First Column of Data.CS.SFSU.txt */
                 v[e][c] = k;
-                cout << v[e][c] << " ";
+                cout << k << " ";
                 for (int b = 1; b <= 2; b++)
                 {
-
                     /* Second Column of Data.CS.SFSU.txt */
                     v[e][b] = s;
                     /* Output Speech by uncommenting the line below */
