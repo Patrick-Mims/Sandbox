@@ -16,9 +16,26 @@ using namespace std;
 */
 vector<vector<string>> v(20, vector<string>(20));
 
-void help()
+/* help function */
+void help(void)
 {
-    cout << "Help here..." << endl;
+    cout << "PARAMETER HOW-TO: " << endl;
+    cout << "1. A Search Key" << endl;
+    cout << "2. An optional 'grammar' word i.e Noun, Verb..." << endl;
+    cout << "3. An optional 'distinct' keyword" << endl;
+    cout << "4. An optional 'reverse' keyword" << endl;
+    cout << endl;
+}
+
+/* introduction function */
+void introduction(void)
+{
+    cout << endl;
+    cout << "====== Dictionary 340 C++ ======" << endl;
+    cout << "------ Keywords: " << v.size() << endl;
+    cout << "------ Definitions: " << v.size() << endl;
+    cout << endl;
+    help();
 }
 
 //void search_vector(vector<vector<string>>, vector<string> &vec)
@@ -42,7 +59,7 @@ void search_vector(string phrase)
     }
 }
 
-void parse()
+void parse(void)
 {
     /* Variables for Definiton, Keyword and Search*/
     string d, k, s, input;
@@ -94,7 +111,7 @@ int main(void)
     string search_term;
 
     parse();
-    cout << "Vector Size: " << v.size() << endl;
+    introduction();
 
     do
     {
