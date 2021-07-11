@@ -21,15 +21,18 @@ void help(void)
 {
     cout << "PARAMETER HOW-TO: " << endl;
     cout << "1. A Search Key" << endl;
+    /*
     cout << "2. An optional 'grammar' word i.e Noun, Verb..." << endl;
     cout << "3. An optional 'distinct' keyword" << endl;
     cout << "4. An optional 'reverse' keyword" << endl;
+    */
     cout << endl;
 }
 
 /* introduction function */
 void introduction(void)
 {
+    cout << endl;
     cout << endl;
     cout << "====== Dictionary 340 C++ ======" << endl;
     cout << "------ Keywords: " << v.size() << endl;
@@ -38,11 +41,9 @@ void introduction(void)
     help();
 }
 
-//void search_vector(vector<vector<string>>, vector<string> &vec)
+/* search the vector for the term */
 void search_vector(string phrase)
 {
-    //    string phrase = "preposition";
-
     vector<vector<string>>::const_iterator row;
 
     for (row = v.begin(); row != v.end(); row++)
@@ -70,6 +71,8 @@ void parse(void)
     /* Variables needed for assigning values to the vector */
     int a = 0, b = 0, c = 0, e = 0;
 
+    cout << "Words to search for: " << endl;
+
     if (file.is_open())
     {
         while (getline(file, input, '\n'))
@@ -81,9 +84,10 @@ void parse(void)
             {
                 /* First Column of Data.CS.SFSU.txt */
                 v[e][c] = k;
-                /* cout << v[e][c] << endl; */
+                cout << v[e][c] << " ";
                 for (int b = 1; b <= 2; b++)
                 {
+
                     /* Second Column of Data.CS.SFSU.txt */
                     v[e][b] = s;
                     /* Output Speech by uncommenting the line below */
@@ -93,15 +97,12 @@ void parse(void)
                     /* Third Colum of Data.CS.SFSU.txt */
                     v[e][b] = d;
                     /* output the Definition by uncommenting the line below */
-                    /* cout << v[e][b] << endl; */
+                    //cout << v[e][b] << endl;
                 }
                 e++;
             }
             c++;
-            cout << "\n";
-            cout << "\n";
         }
-        file.close();
     }
 }
 
